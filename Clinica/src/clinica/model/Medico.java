@@ -13,4 +13,7 @@ public class Medico {
 	private String cognome;
 	@Column(nullable=false)
 	private String specializzazione;
+
+
+	public Medico(){}
 }
