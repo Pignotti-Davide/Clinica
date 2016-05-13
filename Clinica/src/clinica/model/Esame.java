@@ -22,4 +22,6 @@ public class Esame {
 	private Date esecuzioneEsame;
 	@Column(nullable=false)
 	private Map<String,String> risultati;
+	
+	public Esame() {}
 }

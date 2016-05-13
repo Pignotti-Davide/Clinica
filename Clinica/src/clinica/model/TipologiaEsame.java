@@ -20,4 +20,6 @@ public class TipologiaEsame {
 	private Map<String,String> prerequisiti;
 	@OneToMany
 	private List<String> indicatoriRisultati;
+	
+	public TipologiaEsame(){}
 }

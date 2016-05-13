@@ -12,4 +12,7 @@ public class Paziente {
 	private String nome;
 	@Column(nullable=false)
 	private String cognome;
+	
+	
+	public Paziente(){}
 }
