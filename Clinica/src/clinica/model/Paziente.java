@@ -1,3 +1,5 @@
+package clinica.model;
+
 import javax.persistence.*;
 
 @Entity
