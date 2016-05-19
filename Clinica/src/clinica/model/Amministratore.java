@@ -4,7 +4,9 @@ import javax.persistence.*;
 
 @Entity
 public class Amministratore {
-
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	private Long idAmministratore;
 	@Column(nullable=false)
 	private String userName;
 
@@ -16,6 +18,15 @@ public class Amministratore {
 	public Amministratore(String userName,String passWord){
 		setUserName(userName);
 		setPassWord(passWord);
+	}
+
+	
+	public Long getIdAmministratore() {
+		return idAmministratore;
+	}
+
+	public void setIdAmministratore(Long idAmministratore) {
+		this.idAmministratore = idAmministratore;
 	}
 
 	public String getUserName() {

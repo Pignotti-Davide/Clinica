@@ -7,20 +7,23 @@ public class Paziente {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	private Long idTipologiaEsame;
+	private Long idPaziente;
 	@Column(nullable=false)
 	private String nome;
 	@Column(nullable=false)
 	private String cognome;
 	
 	
-	public Long getIdTipologiaEsame() {
-		return idTipologiaEsame;
+	
+
+
+	public Long getIdPaziente() {
+		return idPaziente;
 	}
 
 
-	public void setIdTipologiaEsame(Long idTipologiaEsame) {
-		this.idTipologiaEsame = idTipologiaEsame;
+	public void setIdPaziente(Long idPaziente) {
+		this.idPaziente = idPaziente;
 	}
 
 
