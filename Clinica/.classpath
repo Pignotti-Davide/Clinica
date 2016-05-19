@@ -19,6 +19,6 @@
 	<classpathentry kind="lib" path="C:/Users/Davide/Documents/Università/Jar Files/hibernate-release-5.1.0.Final/lib/required/javassist-3.20.0-GA.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Davide/Documents/Università/Jar Files/hibernate-release-5.1.0.Final/lib/required/jboss-logging-3.3.0.Final.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Davide/Documents/Università/Jar Files/hibernate-release-5.1.0.Final/lib/jpa/hibernate-entitymanager-5.1.0.Final.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Davide/Documents/Università/Jar Files/Servlet-3_0-final/servlet-3_0-final-jar_and_schema/javax.servlet.jar"/>
+	<classpathentry kind="lib" path="https://github.com/Pignotti-Davide/Clinica/blob/master/servlet-1.0.0-v20070606.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
