@@ -20,7 +20,7 @@ public class Esame {
 	private Date prenotazione;
 	@Column(nullable=false)
 	private Date esecuzioneEsame;
-	@Column(nullable=false)
+	@OneToMany(cascade=CascadeType.ALL)
 	private Map<String,String> risultati;
 	
 	public Esame() {}
