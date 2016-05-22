@@ -1,6 +1,8 @@
 package clinica.persistence;
-
+import javax.persistence.*;
+import clinica.model.Esame;
 public class EsameDaoJPA {
+	
 	public void create(Esame e) {
 
 		try{
@@ -32,7 +34,7 @@ public class EsameDaoJPA {
 	public void delete(Esame e) {
 		Esame esa=null;
 		Connessione.getEm().getTransaction().begin();
-		esa=Connessione.getEm().find(Medico.class, e.getIdMedico());
+		esa=Connessione.getEm().find(Esame.class, e.getId());
 		Connessione.getEm().remove(esa);
 		Connessione.getEm().getTransaction().commit();
 	}
