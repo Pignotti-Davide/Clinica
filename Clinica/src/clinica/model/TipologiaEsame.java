@@ -22,4 +22,53 @@ public class TipologiaEsame {
 	private List<String> indicatoriRisultati;
 	
 	public TipologiaEsame(){}
+
+	public Long getIdTipologiaEsame() {
+		return idTipologiaEsame;
+	}
+
+	public void setIdTipologiaEsame(Long idTipologiaEsame) {
+		this.idTipologiaEsame = idTipologiaEsame;
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public String getDescrizione() {
+		return descrizione;
+	}
+
+	public void setDescrizione(String descrizione) {
+		this.descrizione = descrizione;
+	}
+
+	public double getCosto() {
+		return costo;
+	}
+
+	public void setCosto(double costo) {
+		this.costo = costo;
+	}
+
+	public Map<String, String> getPrerequisiti() {
+		return prerequisiti;
+	}
+
+	public void setPrerequisiti(Map<String, String> prerequisiti) {
+		this.prerequisiti = prerequisiti;
+	}
+
+	public List<String> getIndicatoriRisultati() {
+		return indicatoriRisultati;
+	}
+
+	public void setIndicatoriRisultati(List<String> indicatoriRisultati) {
+		this.indicatoriRisultati = indicatoriRisultati;
+	}
+	
 }

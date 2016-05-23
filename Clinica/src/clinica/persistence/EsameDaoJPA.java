@@ -3,11 +3,11 @@ import javax.persistence.*;
 import clinica.model.Esame;
 public class EsameDaoJPA {
 	
-	public void create(Esame e) {
+	public void create(Esame es) {
 
 		try{
 			Connessione.getEm().getTransaction().begin();
-			Connessione.getEm().persist(e);
+			Connessione.getEm().persist(es);
 			Connessione.getEm().getTransaction().commit();
 			Connessione.getEm().clear();				
 		}
@@ -34,7 +34,7 @@ public class EsameDaoJPA {
 	public void delete(Esame e) {
 		Esame esa=null;
 		Connessione.getEm().getTransaction().begin();
-		esa=Connessione.getEm().find(Esame.class, e.getId());
+		esa=Connessione.getEm().find(Esame.class, e.getIdEsame());
 		Connessione.getEm().remove(esa);
 		Connessione.getEm().getTransaction().commit();
 	}

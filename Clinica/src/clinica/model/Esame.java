@@ -23,6 +23,54 @@ public class Esame {
 	@OneToMany(cascade=CascadeType.ALL)
 	private Map<String,String> risultati;
 	
+	public Long getIdEsame() {
+		return idEsame;
+	}
+
+	public void setIdEsame(Long idEsame) {
+		this.idEsame = idEsame;
+	}
+
+	public Medico getMedico() {
+		return medico;
+	}
+
+	public void setMedico(Medico medico) {
+		this.medico = medico;
+	}
+
+	public Paziente getPaziente() {
+		return paziente;
+	}
+
+	public void setPaziente(Paziente paziente) {
+		this.paziente = paziente;
+	}
+
+	public Date getPrenotazione() {
+		return prenotazione;
+	}
+
+	public void setPrenotazione(Date prenotazione) {
+		this.prenotazione = prenotazione;
+	}
+
+	public Date getEsecuzioneEsame() {
+		return esecuzioneEsame;
+	}
+
+	public void setEsecuzioneEsame(Date esecuzioneEsame) {
+		this.esecuzioneEsame = esecuzioneEsame;
+	}
+
+	public Map<String, String> getRisultati() {
+		return risultati;
+	}
+
+	public void setRisultati(Map<String, String> risultati) {
+		this.risultati = risultati;
+	}
+
 	public Esame() {}
 }
 
