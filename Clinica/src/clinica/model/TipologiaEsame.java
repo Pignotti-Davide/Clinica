@@ -1,26 +1,29 @@
 package clinica.model;
 
-import java.util.List;
 import java.util.Map;
 
 import javax.persistence.*;
+import javax.persistence.Entity;
 
+import org.hibernate.annotations.CollectionOfElements;
+import org.hibernate.annotations.MapKey;
 @Entity
 public class TipologiaEsame {
+	@Column(name="TIPOLOGIA_ID")
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long idTipologiaEsame;
 	@Column(nullable=false)
 	private String nome;
-	@Column(nullable=false)
+	@Column
 	private String descrizione;
-	@Column(nullable=false)
-	private double costo;
-	 @ElementCollection
-	 @MapKeyColumn(name="name")
-	    @Column(name="value")
-	    @CollectionTable(name="tipologiaesame_attributes", joinColumns=@JoinColumn(name="tipologiaesame_id"))
-	private Map<String,String> prerequisiti;
+	@CollectionOfElements(targetElement=java.lang.String.class)
+	@JoinTable(name="requisiti_tipologia",
+	        joinColumns=@JoinColumn(name="TIPOLOGIA_ID"))
+	@MapKey (columns=@Column(name="REQUISITO_ID"))
+	@Column(name="REQUISITO")
+	@ElementCollection
+	private Map<String,String> nomeRequisiti;
 //	@OneToMany
 //	private List<String> indicatoriRisultati;
 //	
@@ -50,20 +53,14 @@ public class TipologiaEsame {
 		this.descrizione = descrizione;
 	}
 
-	public double getCosto() {
-		return costo;
-	}
-
-	public void setCosto(double costo) {
-		this.costo = costo;
-	}
+	
 
 	public Map<String, String> getPrerequisiti() {
-		return prerequisiti;
+		return nomeRequisiti;
 	}
 
 	public void setPrerequisiti(Map<String, String> prerequisiti) {
-		this.prerequisiti = prerequisiti;
+		this.nomeRequisiti = prerequisiti;
 	}
 
 //	public List<String> getIndicatoriRisultati() {
