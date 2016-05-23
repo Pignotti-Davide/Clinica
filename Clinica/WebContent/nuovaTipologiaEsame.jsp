@@ -35,6 +35,7 @@ function AggiungiRata(rate){
 <!-- Form di esempio [SPALMAMENTO IN RATE DI UN IMPORTO] -->
 <form method="get" action="controllerTipologia" name="form2">
 <table border="0">
+${nomeError}
 <tr><td>Euro : </td><td><input type='text' name='importo' value="0" maxlength="10" /></td></tr>
 <tr><td>Numero di rate : </td><td><input type="text" name="rate" maxlength="2" onkeyup="AggiungiRata(this)"/></td></tr>
 </table>
