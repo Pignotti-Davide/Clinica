@@ -47,7 +47,7 @@ public class ControllerTipologiaEsame extends HttpServlet {
 			request.setAttribute("nomeError", "Campo obbligatorio");
 		}
 		if(erroriPresenti){
-			nextPage  = "/inseriscitipologiaesame.jsp";
+			nextPage  = "/nuovaTipologiaEsame.jsp";
 		}
 		// tutti i dati corretti
 		TipologiaEsame tip = new TipologiaEsame();
