@@ -16,11 +16,14 @@ public class TipologiaEsame {
 	private String descrizione;
 	@Column(nullable=false)
 	private double costo;
-	@OneToMany
+	 @ElementCollection
+	 @MapKeyColumn(name="name")
+	    @Column(name="value")
+	    @CollectionTable(name="tipologiaesame_attributes", joinColumns=@JoinColumn(name="tipologiaesame_id"))
 	private Map<String,String> prerequisiti;
-	@OneToMany
-	private List<String> indicatoriRisultati;
-	
+//	@OneToMany
+//	private List<String> indicatoriRisultati;
+//	
 	public TipologiaEsame(){}
 
 	public Long getIdTipologiaEsame() {
@@ -63,12 +66,12 @@ public class TipologiaEsame {
 		this.prerequisiti = prerequisiti;
 	}
 
-	public List<String> getIndicatoriRisultati() {
-		return indicatoriRisultati;
-	}
-
-	public void setIndicatoriRisultati(List<String> indicatoriRisultati) {
-		this.indicatoriRisultati = indicatoriRisultati;
-	}
+//	public List<String> getIndicatoriRisultati() {
+//		return indicatoriRisultati;
+//	}
+//
+//	public void setIndicatoriRisultati(List<String> indicatoriRisultati) {
+//		this.indicatoriRisultati = indicatoriRisultati;
+//	}
 	
 }
