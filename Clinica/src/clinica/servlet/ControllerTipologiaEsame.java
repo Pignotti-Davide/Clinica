@@ -14,10 +14,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import clinica.model.Requisito;
 import clinica.model.TipologiaEsame;
 import clinica.persistence.TipologiaEsameDaoJPA;
+import jdk.nashorn.internal.ir.RuntimeNode.Request;
 
-@WebServlet("/controllerTipologia")
+@WebServlet("/controllerTipologiaEsame")
 public class ControllerTipologiaEsame extends HttpServlet {
 
 
@@ -30,18 +32,16 @@ public class ControllerTipologiaEsame extends HttpServlet {
 		// gestione della RICHIESTA
 
 		// leggo e manipolo i parametri
-		String nome = request.getParameter("importo").toUpperCase();
-		String num = request.getParameter("rate");
+		String nome = request.getParameter("nome_Esame").toUpperCase();
+		String descrizione=request.getParameter("descrizione");
+		String num = request.getParameter("num_requisiti");
 		int numero = Integer.parseInt(num);
-		String [] requisiti= new String[numero];
-		for(int i=1; i<=numero; i++){
-			requisiti[i-1] =request.getParameter("rata"+i);
-		}
+		
 		//  verifico i dati
 
 		boolean erroriPresenti = false;
 		String nextPage=null;
-		
+
 		if(nome.equals("")){
 			erroriPresenti=true;
 			request.setAttribute("nomeError", "Campo obbligatorio");
@@ -51,24 +51,23 @@ public class ControllerTipologiaEsame extends HttpServlet {
 		}
 		// tutti i dati corretti
 		TipologiaEsame tip = new TipologiaEsame();
-//		tip.setPrerequisiti(creaMappaRequisiti(requisiti));
+
+		tip.setPrerequisiti(creaMappaRequisiti(numero,request));
 		tip.setNome(nome);
-		new TipologiaEsameDaoJPA().create(tip);
+		tip.setDescrizione(descrizione);
+		//new TipologiaEsameDaoJPA().create(tip);
 		ServletContext application  = getServletContext();
 		HttpSession session= request.getSession();
 		session.setAttribute("tip", tip);
 		String urlNextPage = response.encodeURL("/tipologiainserita.jsp");
 		RequestDispatcher rd = application.getRequestDispatcher(urlNextPage);
 		rd.forward(request, response);
-		return; 
+		
 	}
-	public Map<String, String> creaMappaRequisiti(String [] s){
+	public Map<String, String> creaMappaRequisiti(int numero,HttpServletRequest request){
 		Map<String, String> creaMappaRequisiti = new HashMap<>();
-	
-		for(String elem: s){
-			System.out.println(elem);
-			String [] array = creaDescrizione(elem);
-			creaMappaRequisiti.put(array[0], array[1]);
+		for(int i=1; i<=numero; i++){
+			creaMappaRequisiti.put(request.getParameter("requisito"+i), request.getParameter("descrizione_requisito"+i));
 		}
 		return creaMappaRequisiti;
 	}
@@ -86,5 +85,5 @@ public class ControllerTipologiaEsame extends HttpServlet {
 		coppia[1]=descrizione;
 		return coppia;
 	}
-	
+
 }

@@ -1,8 +1,12 @@
 package clinica.persistence;
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.*;
 import clinica.model.Esame;
+import clinica.model.Paziente;
 public class EsameDaoJPA {
-	
+
 	public void create(Esame es) {
 
 		try{
@@ -37,6 +41,10 @@ public class EsameDaoJPA {
 		esa=Connessione.getEm().find(Esame.class, e.getIdEsame());
 		Connessione.getEm().remove(esa);
 		Connessione.getEm().getTransaction().commit();
+	}
+
+	public List<Esame> retrieveEsamiDelPaziente(Paziente p){
+		return Connessione.getEm().createQuery("Select e From Esame e Where e.paziente="+p.getIdPaziente()).getResultList();
 	}
 }
 

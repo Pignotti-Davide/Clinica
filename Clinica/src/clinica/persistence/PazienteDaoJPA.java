@@ -21,16 +21,16 @@ public class PazienteDaoJPA {
 		}	
 	}
 
-	public Paziente retrieve(Paziente p) {
+	public Paziente retrieve(long codPaziente) {
 		Paziente paz=null;
 		Connessione.getEm().getTransaction().begin();
-		paz = Connessione.getEm().find(Paziente.class, p.getIdPaziente());
+		paz = Connessione.getEm().find(Paziente.class, codPaziente);
 		Connessione.getEm().clear();
 		Connessione.getEm().getTransaction().commit();
 		return paz;
-
-
 	}
+	
+	
 
 	public void update(Paziente p) {
 		Connessione.getEm().getTransaction().begin();

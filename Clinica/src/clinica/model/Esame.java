@@ -16,6 +16,8 @@ public class Esame {
 	private Medico medico;
 	@OneToOne
 	private Paziente paziente;
+	@OneToOne
+	private TipologiaEsame tipologiaEsame;
 	@Column(nullable=false)
 	private Date prenotazione;
 	@Column(nullable=false)
@@ -69,6 +71,15 @@ public class Esame {
 
 	public void setRisultati(Map<String, String> risultati) {
 		this.risultati = risultati;
+	}
+	
+
+	public TipologiaEsame getTipologiaEsame() {
+		return tipologiaEsame;
+	}
+
+	public void setTipologiaEsame(TipologiaEsame tipologiaEsame) {
+		this.tipologiaEsame = tipologiaEsame;
 	}
 
 	public Esame() {}

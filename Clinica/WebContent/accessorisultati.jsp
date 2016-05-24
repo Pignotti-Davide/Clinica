@@ -25,7 +25,7 @@
 							placeholder="Username" name="username"
 							value='${param["username"]}'>
 					</div>
-					<div class="form-group">
+					
 				
               
 					<button type="submit" class="btn btn-default">Invia</button>
