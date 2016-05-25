@@ -1,8 +1,6 @@
 package clinica.servlet;
 
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletContext;
@@ -14,9 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import clinica.model.Medico;
-import clinica.model.TipologiaEsame;
 import clinica.persistence.MedicoDaoJPA;
-import clinica.persistence.TipologiaEsameDaoJPA;
 
 @WebServlet("/controllerMedico")
 public class ControllerMedico extends HttpServlet {
@@ -26,6 +22,7 @@ public class ControllerMedico extends HttpServlet {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
 		// gestione della RICHIESTA
