@@ -1,7 +1,6 @@
 package clinica.servlet;
 
 import java.io.IOException;
-import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletContext;
@@ -13,7 +12,6 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import clinica.model.Paziente;
-import clinica.persistence.Connessione;
 import clinica.persistence.PazienteDaoJPA;
 
 /**
@@ -28,6 +26,7 @@ public class ControllerPaziente extends HttpServlet {
      */
     public ControllerPaziente() {
         super();
+        
         // TODO Auto-generated constructor stub
     }
 

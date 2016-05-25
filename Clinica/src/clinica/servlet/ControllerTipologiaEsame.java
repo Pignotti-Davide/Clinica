@@ -2,7 +2,6 @@ package clinica.servlet;
 
 import java.io.IOException;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import javax.servlet.RequestDispatcher;
@@ -14,10 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import clinica.model.Requisito;
 import clinica.model.TipologiaEsame;
-import clinica.persistence.TipologiaEsameDaoJPA;
-import jdk.nashorn.internal.ir.RuntimeNode.Request;
 
 @WebServlet("/controllerTipologiaEsame")
 public class ControllerTipologiaEsame extends HttpServlet {

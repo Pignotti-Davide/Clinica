@@ -1,8 +1,8 @@
 package clinica.persistence;
-import java.util.ArrayList;
 import java.util.List;
 
-import javax.persistence.*;
+import javax.persistence.RollbackException;
+
 import clinica.model.Esame;
 import clinica.model.Paziente;
 public class EsameDaoJPA {
