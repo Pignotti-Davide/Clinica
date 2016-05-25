@@ -5,13 +5,14 @@ import java.util.Map;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.JoinTable;
 import javax.persistence.OneToOne;
-
+import javax.persistence.JoinColumn;
 import org.hibernate.annotations.CollectionOfElements;
 import org.hibernate.annotations.MapKey;
 
