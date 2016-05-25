@@ -1,4 +1,6 @@
 package clinica.persistence;
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
@@ -11,12 +13,12 @@ public class TipologiaEsameDaoJPA {
 
 		
 			EntityManagerFactory emf = Persistence.createEntityManagerFactory("clinica-unit");
-			System.out.println("dopo emf");
+		
 
 			EntityManager em = emf.createEntityManager();
-			System.out.println("dopo em");
+	
 			EntityTransaction tx=em.getTransaction();
-			System.out.println("dopo tx");
+	
 			tx.begin();
 			System.out.print(esa.toString());
 			em.persist(esa);
@@ -46,5 +48,14 @@ public class TipologiaEsameDaoJPA {
 		esa=Connessione.getEm().find(TipologiaEsame.class, e.getIdTipologiaEsame());
 		Connessione.getEm().remove(esa);
 		Connessione.getEm().getTransaction().commit();
+	}
+	public List<TipologiaEsame> findAll(){
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory("clinica-unit");
+		EntityManager em = emf.createEntityManager();
+		EntityTransaction tx=em.getTransaction();
+		tx.begin();
+		List<TipologiaEsame> list = em.createQuery("SELECT t FROM TipologiaEsame t").getResultList();
+		tx.commit();
+		return list;
 	}
 }
