@@ -21,8 +21,9 @@
 	<center>
 		Hai inserito una nuova tipologia d'esame <br>Nome:${tip.nome}; <br>
 		<tr>
-		<td>Decrizione dell'esame: ${tip.descrizione}</td>
-		</tr><br>
+			<td>Decrizione dell'esame: ${tip.descrizione}</td>
+		</tr>
+		<br>
 		<% 
 						TipologiaEsame tipologia= (TipologiaEsame)session.getAttribute("tip");
 						if(!tipologia.getPrerequisiti().isEmpty())

@@ -29,10 +29,10 @@
 					<div class="form-group">
 						Inserisci il codice dell'esame che intendi visualizzare: <input
 							type="text" name="codiceEsame">
-							</div>
-						<button type="submit" class="btn btn-default">Invia</button>
-						</form>
-						
+					</div>
+					<button type="submit" class="btn btn-default">Invia</button>
+				</form>
+
 			</td>
 
 		</tr>
