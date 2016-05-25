@@ -1,4 +1,8 @@
 package clinica.persistence;
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.EntityTransaction;
+import javax.persistence.Persistence;
 import javax.persistence.RollbackException;
 
 import clinica.model.TipologiaEsame;
@@ -6,13 +10,19 @@ public class TipologiaEsameDaoJPA {
 	public void create(TipologiaEsame esa) {
 
 		try{
-			Connessione.getEm().getTransaction().begin();
-			Connessione.getEm().persist(esa);
-			Connessione.getEm().getTransaction().commit();
-			Connessione.getEm().clear();				
+			EntityManagerFactory emf = Persistence.createEntityManagerFactory("clinica-unit");
+			EntityManager em = emf.createEntityManager();
+			EntityTransaction tx=em.getTransaction();
+			tx.begin();
+			System.out.print(esa.toString());
+			em.persist(esa);
+			tx.commit();
+			em.close();
+			emf.close();
 		}
 		catch (RollbackException e){
-			Connessione.getEm().clear();
+//			Connessione.getEm().clear();
+			System.out.println(e);
 		}	
 	}
 

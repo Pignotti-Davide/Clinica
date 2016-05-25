@@ -17,10 +17,10 @@ public class Connessione {
 	private static Connection c;
 
 	public Connessione(){
-		emf=Persistence.createEntityManagerFactory("manager");
+		emf=Persistence.createEntityManagerFactory("clinica-unit");
 		em=emf.createEntityManager();
 		try {
-			c=DriverManager.getConnection("jdbc:hsqldb:file:files/dataBase/gestionaleDB;shutdown=true", "sa", "");
+			c=DriverManager.getConnection("jdbc:postgresql://localhost/clinica");
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

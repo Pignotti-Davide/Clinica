@@ -18,10 +18,11 @@ public class TipologiaEsame {
 	@Column
 	private String descrizione;
 	@CollectionOfElements(targetElement=java.lang.String.class)
-	@JoinTable(name="requisiti_tipologia",
+	@JoinTable(name="TIPOLOGIAESAME_REQUISITI",
 	        joinColumns=@JoinColumn(name="TIPOLOGIA_ID"))
-	@MapKey (columns=@Column(name="REQUISITO_ID"))
-	@Column(name="REQUISITO")
+	@Column(name="DESCRIZIONE")
+	@MapKey (columns=@Column(name="CHAPTER_KEY"))
+	
 	@ElementCollection
 	private Map<String,String> nomeRequisiti;
 //	@OneToMany
@@ -61,6 +62,12 @@ public class TipologiaEsame {
 
 	public void setPrerequisiti(Map<String, String> prerequisiti) {
 		this.nomeRequisiti = prerequisiti;
+	}
+
+	@Override
+	public String toString() {
+		return "TipologiaEsame [idTipologiaEsame=" + idTipologiaEsame + ", nome=" + nome + ", descrizione="
+				+ descrizione + ", nomeRequisiti=" + nomeRequisiti + "]";
 	}
 
 //	public List<String> getIndicatoriRisultati() {

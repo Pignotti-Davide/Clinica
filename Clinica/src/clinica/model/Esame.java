@@ -5,6 +5,9 @@ import java.util.Map;
 
 import javax.persistence.*;
 
+import org.hibernate.annotations.CollectionOfElements;
+import org.hibernate.annotations.MapKey;
+
 @Entity
 public class Esame {
 
@@ -22,7 +25,12 @@ public class Esame {
 	private Date prenotazione;
 	@Column(nullable=false)
 	private Date esecuzioneEsame;
-	@OneToMany(cascade=CascadeType.ALL)
+	@CollectionOfElements(targetElement=java.lang.String.class)
+	@JoinTable(name="ESAME_RISULTATI",
+	        joinColumns=@JoinColumn(name="ESAME_ID"))
+	@MapKey (columns=@Column(name="RISULTATI_ID"))
+	@Column(name="REQUISITO")
+	@ElementCollection
 	private Map<String,String> risultati;
 	
 	public Long getIdEsame() {
