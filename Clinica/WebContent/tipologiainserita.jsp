@@ -1,3 +1,4 @@
+
 <%@ page import="clinica.model.TipologiaEsame"%>
 <!doctype html>
 <html>
