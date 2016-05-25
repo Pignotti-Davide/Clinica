@@ -9,21 +9,20 @@ import clinica.model.TipologiaEsame;
 public class TipologiaEsameDaoJPA {
 	public void create(TipologiaEsame esa) {
 
-		try{
+		
 			EntityManagerFactory emf = Persistence.createEntityManagerFactory("clinica-unit");
+			System.out.println("dopo emf");
+
 			EntityManager em = emf.createEntityManager();
+			System.out.println("dopo em");
 			EntityTransaction tx=em.getTransaction();
+			System.out.println("dopo tx");
 			tx.begin();
 			System.out.print(esa.toString());
 			em.persist(esa);
 			tx.commit();
 			em.close();
 			emf.close();
-		}
-		catch (RollbackException e){
-//			Connessione.getEm().clear();
-			System.out.println(e);
-		}	
 	}
 
 	public TipologiaEsame retrieve(int id) {
