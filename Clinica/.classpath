@@ -12,10 +12,11 @@
 	<classpathentry kind="lib" path="Librerie/hibernate-jpa-2.1-api-1.0.0.Final.jar"/>
 	<classpathentry kind="lib" path="Librerie/jandex-2.0.0.Final.jar"/>
 	<classpathentry kind="lib" path="Librerie/javassist-3.20.0-GA.jar"/>
-	<classpathentry kind="lib" path="Librerie/javax.persistence.jar"/>
-	<classpathentry kind="lib" path="Librerie/javax.servlet.jar"/>
 	<classpathentry kind="lib" path="Librerie/jboss-logging-3.3.0.Final.jar"/>
 	<classpathentry kind="lib" path="Librerie/log4j-1.2.17.jar"/>
 	<classpathentry kind="lib" path="Librerie/postgresql-9.4.1208.jre7.jar"/>
+	<classpathentry kind="lib" path="Librerie/javax.servlet.jar"/>
+	<classpathentry kind="lib" path="Librerie/javax.persistence.jar"/>
+	<classpathentry kind="lib" path="Librerie/hibernate-entitymanager-5.1.0.Final.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
