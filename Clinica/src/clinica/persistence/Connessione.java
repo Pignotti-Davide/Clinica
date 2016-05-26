@@ -5,10 +5,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.EntityTransaction;
-import javax.persistence.Persistence;
+import javax.persistence.*;
 
 public class Connessione {
 	public static final Connessione instance=new Connessione();
@@ -27,7 +24,7 @@ public class Connessione {
 		}
 	}
 	
-public static Connessione getInstance() {
+public synchronized static Connessione getInstance() {
 		return instance;
 		}
 	
