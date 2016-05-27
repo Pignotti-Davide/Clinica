@@ -18,5 +18,6 @@
 	<classpathentry kind="lib" path="Librerie/javax.servlet.jar"/>
 	<classpathentry kind="lib" path="Librerie/javax.persistence.jar"/>
 	<classpathentry kind="lib" path="Librerie/hibernate-entitymanager-5.1.0.Final.jar"/>
+	<classpathentry kind="lib" path="Librerie/javax.ejb.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
