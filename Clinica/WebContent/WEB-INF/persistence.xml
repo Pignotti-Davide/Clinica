@@ -4,6 +4,7 @@
 <class>clinica.model.Esame</class>
 <class>clinica.model.Paziente</class>
 <class>clinica.model.Medico</class>
+<class>clinica.model.Utente</class>
 <properties>
 <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
 <property name="javax.persistence.jdbc.user" value="postgres"/>
@@ -13,7 +14,7 @@
 <property name="hibernate.show_sql" value="true"/>
 <property name="hibernate.format_sql" value="true"/>
 <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect"/>
-<property name="hibernate.hbm2ddl.auto" value="update"/>
+<property name="hibernate.hbm2ddl.auto" value="create"/>
 </properties>
 </persistence-unit>
 </persistence>

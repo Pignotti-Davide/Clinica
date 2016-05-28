@@ -1,3 +1,18 @@
+<%@ page import="clinica.model.Utente" %>
+<% Utente utente = (Utente)session.getAttribute("utente");
+   boolean autorizzato = true;
+   if (utente!=null)
+	   autorizzato &= (utente.getRole().equals("admin"));
+   else 
+   	   autorizzato = false;
+   if (!autorizzato) {
+   	   out.clear();
+	   RequestDispatcher rd = application.getRequestDispatcher("/error.jsp");
+   	   rd.forward(request, response);
+	   return;
+	}
+%>
+
 <%@ page import="clinica.model.TipologiaEsame"%>
 <!doctype html>
 <html>

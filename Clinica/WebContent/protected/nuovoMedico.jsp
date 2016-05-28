@@ -1,3 +1,17 @@
+<%@ page import="clinica.model.Utente" %>
+<% Utente utente = (Utente)session.getAttribute("utente");
+   boolean autorizzato = true;
+   if (utente!=null)
+	   autorizzato &= (utente.getRole().equals("admin"));
+   else 
+   	   autorizzato = false;
+   if (!autorizzato) {
+   	   out.clear();
+	   RequestDispatcher rd = application.getRequestDispatcher("/error.jsp");
+   	   rd.forward(request, response);
+	   return;
+	}
+%>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -16,7 +30,7 @@
           
 	<h4>Aggiungi un nuovo medico</h4>
 
-	<form method="get" action="controllerMedico" name="form">
+	<form method="get" action="../controllerMedico" name="form">
 		           <font size="3" color="red">${nomeError}</font> <br>
 			<br>
 			<tr>

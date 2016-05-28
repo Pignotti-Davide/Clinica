@@ -3,6 +3,16 @@
 <html>
 <head>
 <meta charset="utf-8">
+<filter>
+    <filter-name>login-filter</filter-name>
+    <filter-class>controller.LoginFilter</filter-class>
+</filter>
+
+<filter-mapping>
+    <filter-name>login-filter</filter-name>
+    <url-pattern>/admin/*</url-pattern>
+</filter-mapping>
+
 <title>Clinica Healthy - Accedi all'area amministratore</title>
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">

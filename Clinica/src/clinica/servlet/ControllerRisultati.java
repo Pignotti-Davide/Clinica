@@ -1,8 +1,6 @@
 package clinica.servlet;
 
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletContext;
@@ -13,13 +11,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import clinica.model.Esame;
 import clinica.model.Medico;
-import clinica.model.TipologiaEsame;
 import clinica.persistence.MedicoDaoJPA;
-import clinica.persistence.TipologiaEsameDaoJPA;
 
-@WebServlet("/controllerMedico")
-public class ControllerMedico extends HttpServlet {
+@WebServlet("/controllerRisultati")
+public class ControllerRisultati extends HttpServlet {
 
 
 	/**
@@ -31,43 +28,29 @@ public class ControllerMedico extends HttpServlet {
 		// gestione della RICHIESTA
 
 		// leggo e manipolo i parametri
-		String nome = request.getParameter("nome_Medico");
-		String cognome=request.getParameter("cognome_Medico");
-		String specializzazione=request.getParameter("specializzazione_Medico");
-	
-		
+		String nome = request.getParameter("code");
 		//  verifico i dati
 
 		boolean erroriPresenti = false;
-		String nextPage="/protected/medicoinserito.jsp";
+		String nextPage="/protected/listaRisultati.jsp";
 		System.out.println(nome);
 		if(nome.isEmpty()){
 			erroriPresenti=true;
 			
-			request.setAttribute("nomeError", "Campo obbligatorio");
+			request.setAttribute("codeError", "Campo obbligatorio");
 		}
-		if(specializzazione.equals("")){
-			erroriPresenti=true;
-			request.setAttribute("cognomeError", "Campo obbligatorio");
-		}
-		if(cognome.equals("")){
-			erroriPresenti=true;
-			request.setAttribute("specializzazioneError", "Campo obbligatorio");
-		}
+		
 		if(erroriPresenti){
-			nextPage  = "/protected/nuovoMedico.jsp";
+			nextPage  = "/protected/risultatiPaziente.jsp";
 		}
 		// tutti i dati corretti
-		Medico med = new Medico();
-		med.setCognome(cognome);
-		med.setNome(nome);
-		med.setSpecializzazione(specializzazione);
-
-		new MedicoDaoJPA().create(med);
+//		Esame esame = new Esame();
+//		esame.set.. bla bla
+//	
 
 		ServletContext application  = getServletContext();
 		HttpSession session= request.getSession();
-		session.setAttribute("med", med);
+		session.setAttribute("med", null);
 		String urlNextPage = response.encodeURL(nextPage);
 		RequestDispatcher rd = application.getRequestDispatcher(urlNextPage);
 		rd.forward(request, response);

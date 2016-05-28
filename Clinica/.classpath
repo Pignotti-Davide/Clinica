@@ -1,23 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="C:/Users/Susy/Desktop/Università/SIW/Progetto2016/librerie/antlr-2.7.7.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Susy/Desktop/Università/SIW/Progetto2016/librerie/classmate-1.3.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Susy/Desktop/Università/SIW/Progetto2016/librerie/dom4j-1.6.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Susy/Desktop/Università/SIW/Progetto2016/librerie/geronimo-jta_1.1_spec-1.1.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Susy/Desktop/Università/SIW/Progetto2016/librerie/hibernate-annotations.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Susy/Desktop/Università/SIW/Progetto2016/librerie/hibernate-commons-annotations-5.0.1.Final.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Susy/Desktop/Università/SIW/Progetto2016/librerie/hibernate-core-5.1.0.Final.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Susy/Desktop/Università/SIW/Progetto2016/librerie/hibernate-entitymanager-5.1.0.Final.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Susy/Desktop/Università/SIW/Progetto2016/librerie/hibernate-jpa-2.1-api-1.0.0.Final.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Susy/Desktop/Università/SIW/Progetto2016/librerie/jandex-2.0.0.Final.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Susy/Desktop/Università/SIW/Progetto2016/librerie/javassist-3.20.0-GA.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Susy/Desktop/Università/SIW/Progetto2016/librerie/javax.ejb.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Susy/Desktop/Università/SIW/Progetto2016/librerie/javax.persistence.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Susy/Desktop/Università/SIW/Progetto2016/librerie/javax.servlet.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Susy/Desktop/Università/SIW/Progetto2016/librerie/jboss-logging-3.3.0.Final.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Susy/Desktop/Università/SIW/Progetto2016/librerie/log4j-1.2.17.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Susy/Desktop/Università/SIW/Progetto2016/librerie/postgresql-9.4.1208.jre6.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="lib" path="Librerie/antlr-2.7.7.jar"/>
-	<classpathentry kind="lib" path="Librerie/classmate-1.3.0.jar"/>
-	<classpathentry kind="lib" path="Librerie/dom4j-1.6.1.jar"/>
-	<classpathentry kind="lib" path="Librerie/geronimo-jta_1.1_spec-1.1.1.jar"/>
-	<classpathentry kind="lib" path="Librerie/hibernate-annotations.jar"/>
-	<classpathentry kind="lib" path="Librerie/hibernate-commons-annotations-5.0.1.Final.jar"/>
-	<classpathentry kind="lib" path="Librerie/hibernate-core-5.1.0.Final.jar"/>
-	<classpathentry kind="lib" path="Librerie/hibernate-jpa-2.1-api-1.0.0.Final.jar"/>
-	<classpathentry kind="lib" path="Librerie/jandex-2.0.0.Final.jar"/>
-	<classpathentry kind="lib" path="Librerie/javassist-3.20.0-GA.jar"/>
-	<classpathentry kind="lib" path="Librerie/jboss-logging-3.3.0.Final.jar"/>
-	<classpathentry kind="lib" path="Librerie/log4j-1.2.17.jar"/>
-	<classpathentry kind="lib" path="Librerie/postgresql-9.4.1208.jre7.jar"/>
-	<classpathentry kind="lib" path="Librerie/javax.servlet.jar"/>
-	<classpathentry kind="lib" path="Librerie/javax.persistence.jar"/>
-	<classpathentry kind="lib" path="Librerie/hibernate-entitymanager-5.1.0.Final.jar"/>
-	<classpathentry kind="lib" path="Librerie/javax.ejb.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
