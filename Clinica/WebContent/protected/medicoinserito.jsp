@@ -20,14 +20,14 @@
 <meta charset="utf-8">
 <title>Clinica Healthy - Area amministrazione</title>
 <!-- Bootstrap Core CSS -->
-<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="../css/bootstrap.min.css" rel="stylesheet">
 
 <!-- Custom CSS -->
-<link href="css/shop-homepage.css" rel="stylesheet">
+<link href="../css/shop-homepage.css" rel="stylesheet">
 </head>
 
 <body>
-<img src="http://susysksiw.altervista.org/logo3.jpg">
+<img src="../Grafica/logo3.jpg">
 
 	<h4>
 		<center>Inserimento medico</center>
@@ -40,7 +40,7 @@
 		<tr>
 
 		</tr><br>
-	
+   <br><a href="homeAdmin.jsp">Torna alla home della sezione admin</a>
 		<center>
 </body>
 </html>

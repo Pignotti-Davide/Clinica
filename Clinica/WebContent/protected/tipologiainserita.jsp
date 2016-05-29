@@ -20,12 +20,12 @@
 <meta charset="utf-8">
 <title>Clinica Healthy - Area amministrazione</title>
 <!-- Bootstrap Core CSS -->
-<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="../css/bootstrap.min.css" rel="stylesheet">
 
 <!-- Custom CSS -->
-<link href="css/shop-homepage.css" rel="stylesheet">
+<link href="../css/shop-homepage.css" rel="stylesheet">
 </head>
-<img src="http://susysksiw.altervista.org/logo3.jpg">
+<img src="../Grafica/logo3.jpg">
 
 <body>
 

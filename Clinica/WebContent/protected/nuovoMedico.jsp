@@ -17,18 +17,18 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
  <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="css/shop-homepage.css" rel="stylesheet">
+    <link href="../css/shop-homepage.css" rel="stylesheet">
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 <title>	Area amministrazione - aggiungi nuovo medico</title>
 </head>
 
 <body>
- <img src="http://susysksiw.altervista.org/logo3.jpg">
+ <img src="../Grafica/logo3.jpg">
           
-	<h4>Aggiungi un nuovo medico</h4>
+	<center><h4>Aggiungi un nuovo medico</h4>
 
 	<form method="get" action="../controllerMedico" name="form">
 		           <font size="3" color="red">${nomeError}</font> <br>
@@ -50,6 +50,6 @@
 		 <br>
 		<input type="submit" value="invia" />
 	</form>
-
+ <br><a href="index.html">Torna alla homepage</a></center>
 </body>
 </html>

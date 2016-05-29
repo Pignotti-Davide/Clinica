@@ -31,10 +31,12 @@
 
   <h4><center>Area riservata all'amministrazione</center>    </h4>
                                 <center>Ciao, <%out.print(utente.getUsername()); %>  , sei qui come <%out.print(utente.getRole()); %>!!!!!
-                               
+                               <form  method="get" action="../userLogout" name="form">
+                                	<button class="btn-default" type="submit"><font size="3" color="red">(LogOut)</font> </button>
+                                	</form>
                                <br>Ecco ciò che puoi fare: 
                                  <br><a href="nuovoMedico.jsp">Inserisci un medico</a>
-                                   <br><a href="index.html">Torna alla homepage</a>
+                                
                                      <br><a href="index.html">Torna alla homepage</a>
                                        <br><a href="index.html">Torna alla homepage</a>
                                <br><a href="index.html">Torna alla homepage</a></center>

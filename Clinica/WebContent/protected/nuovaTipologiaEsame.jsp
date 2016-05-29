@@ -17,15 +17,15 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
  <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="css/shop-homepage.css" rel="stylesheet">
+    <link href="../css/shop-homepage.css" rel="stylesheet">
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 <title>	Area amministrazione - aggiungi nuova tipologia esame</title>
 <script type="text/javascript">
 
-// Funzione che permette di aggiungere elementi al form (ESEMPIO 2)
+
 function AggiungiRequisito(requisiti){
 	var numero_requisiti = requisiti.value;
 	var box = document.getElementById('box_requisiti');
@@ -44,7 +44,7 @@ function AggiungiRequisito(requisiti){
 				"	Descrizione requisito: <input type='text' name='descrizione_requisito"+i+"' size='40'/>"+
 				"<br/>";
 			}
-			// Aggiorno il contenuto del box che conterrà gli elementi aggiunti
+		
 			box.innerHTML=righe;
 		}
 	}
@@ -53,7 +53,7 @@ function AggiungiRequisito(requisiti){
 </head>
 
 <body>
- <img src="http://susysksiw.altervista.org/logo3.jpg">
+ <img src="../Grafica/logo3.jpg">
           
 	<h4>Aggiungi una nuova tipologia di esame</h4>
 

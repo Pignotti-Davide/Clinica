@@ -17,6 +17,7 @@
   <h4><center>Accedi all'area amministrazione</center>    </h4>
                                 <center>Effettua il login con i tuoi dati amministrazione <form  method="get" action="../userLogout" name="form">
                                 	<button class="btn-default" type="submit"><font size="3" color="red">(LogOut)</font> </button>
+                                	</form>
                                 <form action="j_security_check" method="POST">
 					
 					<div class="form-group">
