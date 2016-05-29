@@ -53,14 +53,8 @@ public class ControllerTipologiaEsame extends HttpServlet {
 		tip.setNome(nome);
 		tip.setDescrizione(descrizione);
 
-
-		System.out.println("prima");
-
 		new TipologiaEsameDaoJPA().create(tip);
 	
-		System.out.println("dopo");
-
-		
 		ServletContext application  = getServletContext();
 		HttpSession session= request.getSession();
 		session.setAttribute("tip", tip);
