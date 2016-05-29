@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import clinica.facade.FacadeDati;
 import clinica.model.Paziente;
 import clinica.persistence.PazienteDaoJPA;
 
@@ -55,21 +56,14 @@ public class ControllerNuovoPaziente extends HttpServlet {
 		p.setNome(nomePaziente);
 		p.setCognome(cognomePaziente);
 
-
-		System.out.println("prima");
-
-		new PazienteDaoJPA().create(p);
+		new FacadeDati().salvaPaziente(p);
 	
-		System.out.println("dopo");
-
-		
 		ServletContext application  = getServletContext();
 		HttpSession session= request.getSession();
 		session.setAttribute("paz", p);
 		String urlNextPage = response.encodeURL("/protected/pazienteInserito.jsp");
 		RequestDispatcher rd = application.getRequestDispatcher(urlNextPage);
 		rd.forward(request, response);
-		
 	}
 
 	/**

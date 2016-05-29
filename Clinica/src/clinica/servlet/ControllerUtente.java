@@ -14,7 +14,7 @@ import javax.servlet.http.HttpSession;
 import clinica.facade.FacadeAutenticazione;
 import clinica.model.Utente;
 
-@WebServlet("/j_security_check")
+@WebServlet("/controllerUtente")
 public class ControllerUtente extends HttpServlet{
 	private static final long serialVersionUID = 1L;
 	public void doPost(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException {

@@ -13,11 +13,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import clinica.facade.FacadeDati;
 import clinica.model.TipologiaEsame;
 import clinica.persistence.TipologiaEsameDaoJPA;
 
 @WebServlet("/controllerTipologiaEsame")
-public class ControllerTipologiaEsame extends HttpServlet {
+public class ControllerNuovaTipologiaEsame extends HttpServlet {
 
 
 	/**
@@ -53,7 +54,7 @@ public class ControllerTipologiaEsame extends HttpServlet {
 		tip.setNome(nome);
 		tip.setDescrizione(descrizione);
 
-		new TipologiaEsameDaoJPA().create(tip);
+		new FacadeDati().salvaTipologiaEsame(tip);
 	
 		ServletContext application  = getServletContext();
 		HttpSession session= request.getSession();
@@ -71,19 +72,4 @@ public class ControllerTipologiaEsame extends HttpServlet {
 		}
 		return creaMappaRequisiti;
 	}
-//	public String [] creaDescrizione(String s){
-//		String[] coppia = new String[2];
-//		String nome="";
-//		String descrizione="";
-//		for(int i =0; i<s.length(); i++){
-//			if(s.charAt(i) ==':'){
-//				nome=s.substring(0, i-1);
-//				descrizione = s.substring(i+1);
-//			}
-//		}
-//		coppia[0]=nome;
-//		coppia[1]=descrizione;
-//		return coppia;
-//	}
-
 }

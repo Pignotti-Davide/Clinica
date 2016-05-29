@@ -11,7 +11,7 @@ import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 
 public class Connessione {
-	public static final Connessione instance=new Connessione();
+	private static  Connessione instance;
 	private static EntityManagerFactory emf;
 	private static EntityManager em;
 	private static Connection c;
@@ -28,6 +28,8 @@ public class Connessione {
 	}
 	
 public synchronized static Connessione getInstance() {
+	if(instance==null)
+		instance=new Connessione();
 		return instance;
 		}
 	
@@ -42,29 +44,18 @@ public synchronized static Connessione getInstance() {
 		}
 	}
 	
-
-
-	public void salvaOggetto(Object object){
-		EntityTransaction tx = em.getTransaction();
-		tx.begin();
-		em.persist((object.getClass().cast(object)));
-		tx.commit();
-	}
-	public void rimuoviOggetto(Object object){
-	}
-
 	public static EntityManagerFactory getEmf() {
 		return emf;
 	}
-
+	
 	public static void setEmf(EntityManagerFactory emf) {
 		Connessione.emf = emf;
 	}
-
+	
 	public static EntityManager getEm() {
 		return em;
 	}
-
+	
 	public static void setEm(EntityManager em) {
 		Connessione.em = em;
 	}
@@ -72,6 +63,4 @@ public synchronized static Connessione getInstance() {
 	public static Connection getC() {
 		return c;
 	}
-	
-
 }
