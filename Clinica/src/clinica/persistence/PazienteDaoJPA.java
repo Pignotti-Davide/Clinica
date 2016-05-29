@@ -17,22 +17,22 @@ public class PazienteDaoJPA {
 	public void create(Paziente p) {
 
 		try{
-			Connessione.getEm().getTransaction().begin();
-			Connessione.getEm().persist(p);
-			Connessione.getEm().getTransaction().commit();
-			Connessione.getEm().clear();
+			Connessione.getInstance().getEm().getTransaction().begin();
+			Connessione.getInstance().getEm().persist(p);
+			Connessione.getInstance().getEm().getTransaction().commit();
+			Connessione.getInstance().getEm().clear();
 		}
 		catch (RollbackException e){
-			Connessione.getEm().clear();
+			Connessione.getInstance().getEm().clear();
 		}
 	}
 
 	public Paziente retrieve(long codPaziente) {
 		Paziente paz=null;
-		Connessione.getEm().getTransaction().begin();
-		paz = Connessione.getEm().find(Paziente.class, codPaziente);
-		Connessione.getEm().clear();
-		Connessione.getEm().getTransaction().commit();
+		Connessione.getInstance().getEm().getTransaction().begin();
+		paz = Connessione.getInstance().getEm().find(Paziente.class, codPaziente);
+		Connessione.getInstance().getEm().clear();
+		Connessione.getInstance().getEm().getTransaction().commit();
 		return paz;
 	}
 	
@@ -49,19 +49,19 @@ public class PazienteDaoJPA {
 	
 
 	public void update(Paziente p) {
-		Connessione.getEm().getTransaction().begin();
-		Connessione.getEm().merge(p);
-		Connessione.getEm().getTransaction().commit();
+		Connessione.getInstance().getEm().getTransaction().begin();
+		Connessione.getInstance().getEm().merge(p);
+		Connessione.getInstance().getEm().getTransaction().commit();
 
 
 	}
 
 	public void delete(Paziente p) {
 		Paziente paz=null;
-		Connessione.getEm().getTransaction().begin();
-		paz=Connessione.getEm().find(Paziente.class, p.getIdPaziente());
-		Connessione.getEm().remove(paz);
-		Connessione.getEm().getTransaction().commit();
+		Connessione.getInstance().getEm().getTransaction().begin();
+		paz=Connessione.getInstance().getEm().find(Paziente.class, p.getIdPaziente());
+		Connessione.getInstance().getEm().remove(paz);
+		Connessione.getInstance().getEm().getTransaction().commit();
 
 	}
 }

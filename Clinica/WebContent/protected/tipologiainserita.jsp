@@ -42,10 +42,13 @@
 						if(!tipologia.getPrerequisiti().isEmpty())
 						out.print("Requisiti: <br>");
 						for(String s:tipologia.getPrerequisiti().keySet()){
-							out.print(s+":");
+							out.print(s+": ");
 							out.print(tipologia.getPrerequisiti().get(s)); 
 							out.print("<br>"); 
-							}%>
+							}
+							out.print("<br> Risultati offerti: <br>");
+							for(String s:tipologia.getIndicatoriRisultati()){
+							out.print(s+"<br>");}%>
 		<center>
 </body>
 </html>

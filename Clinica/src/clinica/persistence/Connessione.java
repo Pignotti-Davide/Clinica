@@ -52,11 +52,11 @@ public synchronized static Connessione getInstance() {
 		Connessione.emf = emf;
 	}
 	
-	public static EntityManager getEm() {
+	public EntityManager getEm() {
 		return em;
 	}
 	
-	public static void setEm(EntityManager em) {
+	public void setEm(EntityManager em) {
 		Connessione.em = em;
 	}
 

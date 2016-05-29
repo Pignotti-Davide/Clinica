@@ -10,41 +10,41 @@ public class EsameDaoJPA {
 	public void create(Esame es) {
 
 		try{
-			Connessione.getEm().getTransaction().begin();
-			Connessione.getEm().persist(es);
-			Connessione.getEm().getTransaction().commit();
-			Connessione.getEm().clear();				
+			Connessione.getInstance().getEm().getTransaction().begin();
+			Connessione.getInstance().getEm().persist(es);
+			Connessione.getInstance().getEm().getTransaction().commit();
+			Connessione.getInstance().getEm().clear();				
 		}
 		catch (RollbackException e){
-			Connessione.getEm().clear();
+			Connessione.getInstance().getEm().clear();
 		}	
 	}
 
 	public Esame retrieve(int id) {
 		Esame es=null;
-		Connessione.getEm().getTransaction().begin();
-		es = Connessione.getEm().find(Esame.class, id);
-		Connessione.getEm().clear();
-		Connessione.getEm().getTransaction().commit();
+		Connessione.getInstance().getEm().getTransaction().begin();
+		es = Connessione.getInstance().getEm().find(Esame.class, id);
+		Connessione.getInstance().getEm().clear();
+		Connessione.getInstance().getEm().getTransaction().commit();
 		return es;
 	}
 
 	public void update(Esame e) {
-		Connessione.getEm().getTransaction().begin();
-		Connessione.getEm().merge(e);
-		Connessione.getEm().getTransaction().commit();
+		Connessione.getInstance().getEm().getTransaction().begin();
+		Connessione.getInstance().getEm().merge(e);
+		Connessione.getInstance().getEm().getTransaction().commit();
 	}
 
 	public void delete(Esame e) {
 		Esame esa=null;
-		Connessione.getEm().getTransaction().begin();
-		esa=Connessione.getEm().find(Esame.class, e.getIdEsame());
-		Connessione.getEm().remove(esa);
-		Connessione.getEm().getTransaction().commit();
+		Connessione.getInstance().getEm().getTransaction().begin();
+		esa=Connessione.getInstance().getEm().find(Esame.class, e.getIdEsame());
+		Connessione.getInstance().getEm().remove(esa);
+		Connessione.getInstance().getEm().getTransaction().commit();
 	}
 
 	public List<Esame> retrieveEsamiDelPaziente(Paziente p){
-		return Connessione.getEm().createQuery("Select e From Esame e Where e.paziente="+p.getIdPaziente()).getResultList();
+		return Connessione.getInstance().getEm().createQuery("Select e From Esame e Where e.paziente="+p.getIdPaziente()).getResultList();
 	}
 }
 

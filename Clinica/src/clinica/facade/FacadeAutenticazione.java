@@ -7,10 +7,10 @@ import clinica.persistence.Connessione;
 public  class FacadeAutenticazione {
 	private EntityManager em;
 		public Utente login(String username, String password){
-			Connessione.getEm().getTransaction().begin();
-			Utente u= 	Connessione.getEm().find(Utente.class, username);
-			Connessione.getEm().getTransaction().commit();
-			Connessione.getEm().clear();				
+			Connessione.getInstance().getEm().getTransaction().begin();
+			Utente u= 	Connessione.getInstance().getEm().find(Utente.class, username);
+			Connessione.getInstance().getEm().getTransaction().commit();
+			Connessione.getInstance().getEm().clear();				
 			System.out.println(username);
 			System.out.println(password);
 			
