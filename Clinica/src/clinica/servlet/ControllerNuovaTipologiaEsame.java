@@ -1,7 +1,9 @@
 package clinica.servlet;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.servlet.RequestDispatcher;
@@ -17,7 +19,7 @@ import clinica.facade.FacadeDati;
 import clinica.model.TipologiaEsame;
 import clinica.persistence.TipologiaEsameDaoJPA;
 
-@WebServlet("/controllerTipologiaEsame")
+@WebServlet("/controllerNuovaTipologiaEsame")
 public class ControllerNuovaTipologiaEsame extends HttpServlet {
 
 
@@ -33,7 +35,9 @@ public class ControllerNuovaTipologiaEsame extends HttpServlet {
 		String nome = request.getParameter("nome_Esame").toUpperCase();
 		String descrizione=request.getParameter("descrizione");
 		String num = request.getParameter("num_requisiti");
-		int numero = Integer.parseInt(num);
+		String num1=request.getParameter("num_risultati");
+		int numeroRequisiti = Integer.parseInt(num);
+		int numeroRisultati=Integer.parseInt(num1);
 		
 		//  verifico i dati
 
@@ -45,31 +49,37 @@ public class ControllerNuovaTipologiaEsame extends HttpServlet {
 			request.setAttribute("nomeError", "Campo obbligatorio");
 		}
 		if(erroriPresenti){
-			nextPage  = "/nuovaTipologiaEsame.jsp";
+			nextPage  = "/protected/nuovaTipologiaEsame.jsp";
 		}
 		// tutti i dati corretti
 		TipologiaEsame tip = new TipologiaEsame();
 
-		tip.setPrerequisiti(creaMappaRequisiti(numero,request));
+	
 		tip.setNome(nome);
 		tip.setDescrizione(descrizione);
-
+		tip.setPrerequisiti(creaMappaRequisiti(numeroRequisiti,request));
+		tip.setIndicatoriRisultati(creaListaRisultati(numeroRisultati, request));
 		new FacadeDati().salvaTipologiaEsame(tip);
 	
 		ServletContext application  = getServletContext();
 		HttpSession session= request.getSession();
 		session.setAttribute("tip", tip);
-		String urlNextPage = response.encodeURL("/tipologiainserita.jsp");
+		String urlNextPage = response.encodeURL("/protected/tipologiainserita.jsp");
 		RequestDispatcher rd = application.getRequestDispatcher(urlNextPage);
 		rd.forward(request, response);
 		
 	}
 	public Map<String, String> creaMappaRequisiti(int numero,HttpServletRequest request){
 		Map<String, String> creaMappaRequisiti = new HashMap<>();
-		for(int i=1; i<=numero; i++){
-			
+		for(int i=1; i<=numero; i++)
 			creaMappaRequisiti.put(request.getParameter("requisito"+i), request.getParameter("descrizione_requisito"+i));
-		}
 		return creaMappaRequisiti;
+	}
+	
+	public List<String> creaListaRisultati(int numero,HttpServletRequest request){
+		List<String> listaRisultati=new ArrayList<String>();
+		for(int i=1; i<=numero; i++)
+		listaRisultati.add(request.getParameter("risultato"+i));
+		return listaRisultati;
 	}
 }

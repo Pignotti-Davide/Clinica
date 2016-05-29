@@ -1,5 +1,6 @@
 package clinica.model;
 
+import java.util.List;
 import java.util.Map;
 
 import javax.persistence.Column;
@@ -10,6 +11,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
+import javax.persistence.OneToMany;
 
 import org.hibernate.annotations.CollectionOfElements;
 import org.hibernate.annotations.MapKey;
@@ -23,17 +25,11 @@ public class TipologiaEsame {
 	private String nome;
 	@Column
 	private String descrizione;
-	@CollectionOfElements(targetElement=java.lang.String.class)
-	@JoinTable(name="TIPOLOGIAESAME_REQUISITI",
-	        joinColumns=@JoinColumn(name="TIPOLOGIA_ID"))
-	@Column(name="DESCRIZIONE")
-	@MapKey (columns=@Column(name="CHAPTER_KEY"))
 	
 	@ElementCollection
 	private Map<String,String> nomeRequisiti;
-//	@OneToMany
-//	private List<String> indicatoriRisultati;
-//	
+	@ElementCollection
+	private List<String> indicatoriRisultati;
 	public TipologiaEsame(){}
 
 	public Long getIdTipologiaEsame() {
@@ -76,12 +72,12 @@ public class TipologiaEsame {
 				+ descrizione + ", nomeRequisiti=" + nomeRequisiti + "]";
 	}
 
-//	public List<String> getIndicatoriRisultati() {
-//		return indicatoriRisultati;
-//	}
-//
-//	public void setIndicatoriRisultati(List<String> indicatoriRisultati) {
-//		this.indicatoriRisultati = indicatoriRisultati;
-//	}
-	
+	public List<String> getIndicatoriRisultati() {
+		return indicatoriRisultati;
+	}
+
+	public void setIndicatoriRisultati(List<String> indicatoriRisultati) {
+		this.indicatoriRisultati = indicatoriRisultati;
+	}
+
 }

@@ -28,25 +28,25 @@ public class TipologiaEsameDaoJPA {
 
 	public TipologiaEsame retrieve(long id) {
 		TipologiaEsame es=null;
-		Connessione.getEm().getTransaction().begin();
-		es = Connessione.getEm().find(TipologiaEsame.class, id);
-		Connessione.getEm().clear();
-		Connessione.getEm().getTransaction().commit();
+		Connessione.getInstance().getEm().getTransaction().begin();
+		es = Connessione.getInstance().getEm().find(TipologiaEsame.class, id);
+		Connessione.getInstance().getEm().clear();
+		Connessione.getInstance().getEm().getTransaction().commit();
 		return es;
 	}
 
 	public void update(TipologiaEsame esa) {
-		Connessione.getEm().getTransaction().begin();
-		Connessione.getEm().merge(esa);
-		Connessione.getEm().getTransaction().commit();
+		Connessione.getInstance().getEm().getTransaction().begin();
+		Connessione.getInstance().getEm().merge(esa);
+		Connessione.getInstance().getEm().getTransaction().commit();
 	}
 
 	public void delete(TipologiaEsame e) {
 		TipologiaEsame esa=null;
-		Connessione.getEm().getTransaction().begin();
-		esa=Connessione.getEm().find(TipologiaEsame.class, e.getIdTipologiaEsame());
-		Connessione.getEm().remove(esa);
-		Connessione.getEm().getTransaction().commit();
+		Connessione.getInstance().getEm().getTransaction().begin();
+		esa=Connessione.getInstance().getEm().find(TipologiaEsame.class, e.getIdTipologiaEsame());
+		Connessione.getInstance().getEm().remove(esa);
+		Connessione.getInstance().getEm().getTransaction().commit();
 	}
 	public List<TipologiaEsame> findAll(){
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("clinica-unit");

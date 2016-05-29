@@ -15,37 +15,37 @@ public class MedicoDaoJPA {
 	public void create(Medico m) {
 
 		try{
-			Connessione.getEm().getTransaction().begin();
-			Connessione.getEm().persist(m);
-			Connessione.getEm().getTransaction().commit();
-			Connessione.getEm().clear();				
+			Connessione.getInstance().getEm().getTransaction().begin();
+			Connessione.getInstance().getEm().persist(m);
+			Connessione.getInstance().getEm().getTransaction().commit();
+			Connessione.getInstance().getEm().clear();				
 		}
 		catch (RollbackException e){
-			Connessione.getEm().clear();
+			Connessione.getInstance().getEm().clear();
 		}	
 	}
 
 	public Medico retrieve(Long id) {
 		Medico med=null;
-		Connessione.getEm().getTransaction().begin();
-		med = Connessione.getEm().find(Medico.class,id);
-		Connessione.getEm().clear();
-		Connessione.getEm().getTransaction().commit();
+		Connessione.getInstance().getEm().getTransaction().begin();
+		med = Connessione.getInstance().getEm().find(Medico.class,id);
+		Connessione.getInstance().getEm().clear();
+		Connessione.getInstance().getEm().getTransaction().commit();
 		return med;
 	}
 
 	public void update(Medico m) {
-		Connessione.getEm().getTransaction().begin();
-		Connessione.getEm().merge(m);
-		Connessione.getEm().getTransaction().commit();
+		Connessione.getInstance().getEm().getTransaction().begin();
+		Connessione.getInstance().getEm().merge(m);
+		Connessione.getInstance().getEm().getTransaction().commit();
 	}
 
 	public void delete(Medico m) {
 		Medico med=null;
-		Connessione.getEm().getTransaction().begin();
-		med=Connessione.getEm().find(Medico.class, m.getIdMedico());
-		Connessione.getEm().remove(med);
-		Connessione.getEm().getTransaction().commit();
+		Connessione.getInstance().getEm().getTransaction().begin();
+		med=Connessione.getInstance().getEm().find(Medico.class, m.getIdMedico());
+		Connessione.getInstance().getEm().remove(med);
+		Connessione.getInstance().getEm().getTransaction().commit();
 	}
 	public List<Medico> findAll(){
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("clinica-unit");
