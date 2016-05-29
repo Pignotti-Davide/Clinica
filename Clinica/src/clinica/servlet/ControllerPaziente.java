@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import clinica.facade.FacadeDati;
 import clinica.model.Paziente;
 import clinica.persistence.PazienteDaoJPA;
 
@@ -36,7 +37,7 @@ public class ControllerPaziente extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		String codiceUtente=request.getParameter("username");
-		Paziente p=new PazienteDaoJPA().retrieve(Long.parseLong(codiceUtente));
+		Paziente p=new FacadeDati().trovaPaziente(Long.parseLong(codiceUtente));
 		boolean erroriPresenti = false;
 		String nextPage=null;
 		//verifica dati

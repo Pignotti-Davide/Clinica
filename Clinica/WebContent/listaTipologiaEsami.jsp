@@ -1,3 +1,4 @@
+<%@page import="clinica.facade.FacadeDati"%>
 <%@ page import="clinica.model.TipologiaEsame"%>
 <%@ page import="clinica.persistence.TipologiaEsameDaoJPA"%>
 <%@ page import="java.util.List"%>
@@ -32,9 +33,8 @@ function visualizza(id){
 }
 </script>
 	<% 	
-		TipologiaEsameDaoJPA tipdao = new TipologiaEsameDaoJPA();
-		List<TipologiaEsame> lista =tipdao.findAll();
-		
+		List<TipologiaEsame> lista =new FacadeDati().findAllTipologieEsami();
+	
 						for(TipologiaEsame tipo: lista){
 							%>
 							<div id="testo"><a href="#" onclick="visualizza('immagine<%out.print(lista.indexOf(tipo));%>'); return false">

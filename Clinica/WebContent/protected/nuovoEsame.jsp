@@ -1,4 +1,4 @@
-<%@page import="clinica.persistence.*"%>
+<%@page import="clinica.facade.*"%>
 <%@page import="clinica.model.*"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
@@ -12,17 +12,17 @@
 <form method="get" action="../controllerNuovoEsame" name="form">
 Seleziona Tipologia d'esame:
 <select name="tipologiaEsame">
-<% for(TipologiaEsame t:new TipologiaEsameDaoJPA().findAll())
+<% for(TipologiaEsame t:new FacadeDati().findAllTipologieEsami())
 	out.print( "<option value="+t.getIdTipologiaEsame()+">"+t.getNome()+"</option>");%>
 </select><br>
 Seleziona Paziente:
 <select name="paziente">
-<% for(Paziente p:new PazienteDaoJPA().findAll())
+<% for(Paziente p:new FacadeDati().findAllPazienti())
 	out.print( "<option value="+p.getIdPaziente()+">"+p.getNome()+" "+p.getCognome()+"</option>");%>
 </select><br>
 Seleziona Medico:
 <select name="medico">
-<% for(Medico m:new MedicoDaoJPA().findAll())
+<% for(Medico m:new FacadeDati().findAllMedici())
 	out.print( "<option value="+m.getIdMedico()+">"+m.getNome()+" "+m.getCognome()+"</option>");%>
 </select><br>
 Seleziona la data dell'esame:

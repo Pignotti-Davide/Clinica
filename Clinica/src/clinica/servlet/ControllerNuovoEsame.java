@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import clinica.facade.FacadeDati;
 import clinica.model.Esame;
 import clinica.model.Medico;
 import clinica.model.Paziente;
@@ -37,9 +38,9 @@ public class ControllerNuovoEsame extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		TipologiaEsame t=new TipologiaEsameDaoJPA().retrieve(Long.parseLong(request.getParameter("tipologiaEsame")));
-		Paziente p=new PazienteDaoJPA().retrieve(Long.parseLong(request.getParameter("paziente")));
-		Medico m=new MedicoDaoJPA().retrieve(Long.parseLong(request.getParameter("medico")));
+		TipologiaEsame t=new FacadeDati().trovaTipologiaEsame(Long.parseLong(request.getParameter("tipologiaEsame")));
+		Paziente p=new FacadeDati().trovaPaziente(Long.parseLong(request.getParameter("paziente")));
+		Medico m=new FacadeDati().trovaMedico(Long.parseLong(request.getParameter("medico")));
 		
 		Esame e=new Esame();
 		e.setMedico(m);

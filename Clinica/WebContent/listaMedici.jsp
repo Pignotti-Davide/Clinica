@@ -1,3 +1,4 @@
+<%@page import="clinica.facade.FacadeDati"%>
 <%@ page import="clinica.model.Medico"%>
 <%@ page import="clinica.persistence.MedicoDaoJPA"%>
 <%@ page import="java.util.List"%>
@@ -21,9 +22,7 @@
 	</h4>
 	<center>
 		<% 	
-		MedicoDaoJPA tipdao = new MedicoDaoJPA();
-		List<Medico> lista =tipdao.findAll();
-						for(Medico tipo: lista){
+						for(Medico tipo: new FacadeDati().findAllMedici()){
 							out.print("Nome:"); 
 							out.print(tipo.getNome());
 							out.print("<br>");
@@ -38,12 +37,9 @@
 							}%>
 							  <h4><a href="index.html">Torna alla homepage</a>
                                 </h4>
-
 		<tr>
-
 		</tr>
 		<br>
-
 		<center>
 </body>
 </html>

@@ -11,11 +11,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import clinica.facade.FacadeDati;
 import clinica.model.Medico;
 import clinica.persistence.MedicoDaoJPA;
 
 @WebServlet("/controllerMedico")
-public class ControllerMedico extends HttpServlet {
+public class ControllerNuovoMedico extends HttpServlet {
 
 
 	/**
@@ -59,7 +60,7 @@ public class ControllerMedico extends HttpServlet {
 		med.setNome(nome);
 		med.setSpecializzazione(specializzazione);
 
-		new MedicoDaoJPA().create(med);
+		new FacadeDati().salvaMedico(med);
 
 		ServletContext application  = getServletContext();
 		HttpSession session= request.getSession();
