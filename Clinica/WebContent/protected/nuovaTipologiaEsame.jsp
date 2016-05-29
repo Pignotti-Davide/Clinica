@@ -44,7 +44,6 @@ function AggiungiRequisito(requisiti){
 				"	Descrizione requisito: <input type='text' name='descrizione_requisito"+i+"' size='40'/>"+
 				"<br/>";
 			}
-		
 			box.innerHTML=righe;
 		}
 	}

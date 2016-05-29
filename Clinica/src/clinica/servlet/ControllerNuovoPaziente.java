@@ -12,9 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import clinica.model.Paziente;
-import clinica.model.TipologiaEsame;
 import clinica.persistence.PazienteDaoJPA;
-import clinica.persistence.TipologiaEsameDaoJPA;
 
 /**
  * Servlet implementation class ControllerNuovoPaziente

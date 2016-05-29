@@ -9,7 +9,6 @@ import javax.persistence.Persistence;
 import javax.persistence.RollbackException;
 
 import clinica.model.Medico;
-import clinica.model.TipologiaEsame;
 
 public class MedicoDaoJPA {
 
@@ -26,10 +25,10 @@ public class MedicoDaoJPA {
 		}	
 	}
 
-	public Medico retrieve(Medico m) {
+	public Medico retrieve(Long id) {
 		Medico med=null;
 		Connessione.getEm().getTransaction().begin();
-		med = Connessione.getEm().find(Medico.class, m.getIdMedico());
+		med = Connessione.getEm().find(Medico.class,id);
 		Connessione.getEm().clear();
 		Connessione.getEm().getTransaction().commit();
 		return med;

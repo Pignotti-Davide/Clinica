@@ -5,7 +5,6 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
-import javax.persistence.RollbackException;
 
 import clinica.model.TipologiaEsame;
 public class TipologiaEsameDaoJPA {
@@ -27,7 +26,7 @@ public class TipologiaEsameDaoJPA {
 			emf.close();
 	}
 
-	public TipologiaEsame retrieve(int id) {
+	public TipologiaEsame retrieve(long id) {
 		TipologiaEsame es=null;
 		Connessione.getEm().getTransaction().begin();
 		es = Connessione.getEm().find(TipologiaEsame.class, id);

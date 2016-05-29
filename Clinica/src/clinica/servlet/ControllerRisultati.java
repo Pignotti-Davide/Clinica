@@ -11,10 +11,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import clinica.model.Esame;
-import clinica.model.Medico;
-import clinica.persistence.MedicoDaoJPA;
-
 @WebServlet("/controllerRisultati")
 public class ControllerRisultati extends HttpServlet {
 
