@@ -27,7 +27,7 @@ public class TipologiaEsameDaoJPA {
 			emf.close();
 	}
 
-	public TipologiaEsame retrieve(int id) {
+	public TipologiaEsame retrieve(long id) {
 		TipologiaEsame es=null;
 		Connessione.getEm().getTransaction().begin();
 		es = Connessione.getEm().find(TipologiaEsame.class, id);

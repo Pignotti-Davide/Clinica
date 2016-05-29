@@ -1,8 +1,15 @@
 package clinica.persistence;
 
+import java.util.List;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.EntityTransaction;
+import javax.persistence.Persistence;
 import javax.persistence.RollbackException;
 
 import clinica.model.Paziente;
+import clinica.model.TipologiaEsame;
 
 
 public class PazienteDaoJPA {
@@ -14,11 +21,11 @@ public class PazienteDaoJPA {
 			Connessione.getEm().getTransaction().begin();
 			Connessione.getEm().persist(p);
 			Connessione.getEm().getTransaction().commit();
-			Connessione.getEm().clear();				
+			Connessione.getEm().clear();
 		}
 		catch (RollbackException e){
 			Connessione.getEm().clear();
-		}	
+		}
 	}
 
 	public Paziente retrieve(long codPaziente) {
@@ -28,6 +35,16 @@ public class PazienteDaoJPA {
 		Connessione.getEm().clear();
 		Connessione.getEm().getTransaction().commit();
 		return paz;
+	}
+	
+	public List<Paziente> findAll(){
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory("clinica-unit");
+		EntityManager em = emf.createEntityManager();
+		EntityTransaction tx=em.getTransaction();
+		tx.begin();
+		List<Paziente> list = em.createQuery("SELECT p FROM Paziente p").getResultList();
+		tx.commit();
+		return list;
 	}
 	
 	
