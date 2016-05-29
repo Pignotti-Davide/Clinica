@@ -1,15 +1,12 @@
 package clinica.facade;
 
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
-import javax.persistence.criteria.CriteriaQuery;
-
-import clinica.model.TipologiaEsame;
-
 import java.util.List;
 import java.util.Map;
 
-import javax.ejb.Stateless;
+import javax.persistence.EntityManager;
+import javax.persistence.criteria.CriteriaQuery;
+
+import clinica.model.TipologiaEsame;
 public class TipologiaEsameFacade {
 
 	private EntityManager em;

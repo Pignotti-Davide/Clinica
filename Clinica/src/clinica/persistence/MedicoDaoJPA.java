@@ -9,7 +9,6 @@ import javax.persistence.Persistence;
 import javax.persistence.RollbackException;
 
 import clinica.model.Medico;
-import clinica.model.TipologiaEsame;
 
 public class MedicoDaoJPA {
 
