@@ -37,7 +37,7 @@
                                <br>Ecco ciò che puoi fare: 
                                  <br><a href="nuovoMedico.jsp">Inserisci un medico</a>
                                 
-                                     <br><a href="index.html">Torna alla homepage</a>
+                                     <br><a href="protected/nuovoPaziente.jsp">Inserisci un paziente</a>
                                        <br><a href="index.html">Torna alla homepage</a>
                                <br><a href="index.html">Torna alla homepage</a></center>
                                 
