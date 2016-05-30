@@ -7,7 +7,7 @@
    	   autorizzato = false;
    if (!autorizzato) {
    	   out.clear();
-	   RequestDispatcher rd = application.getRequestDispatcher("/error.jsp");
+	   RequestDispatcher rd = application.getRequestDispatcher("/login.jsp");
    	   rd.forward(request, response);
 	   return;
 	}
@@ -20,10 +20,10 @@
 <meta charset="utf-8">
 <title>Clinica Healthy - Area amministrazione</title>
     <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="css/shop-homepage.css" rel="stylesheet">
+    <link href="../css/shop-homepage.css" rel="stylesheet">
 </head>
           <img src="http://susysksiw.altervista.org/logo3.jpg">
           
@@ -35,10 +35,18 @@
                                 	<button class="btn-default" type="submit"><font size="3" color="red">(LogOut)</font> </button>
                                 	</form>
                                <br>Ecco ciò che puoi fare: 
-                                 <br><a href="protected/nuovoMedico.jsp">Inserisci un medico</a>
-                                
-                                     <br><a href="protected/nuovoPaziente.jsp">Inserisci un paziente</a>
-                                       <br><a href="protected/nuovaTipologiaEsame.jsp">Inserisci una tipologia di esame</a>
+                                 <br>
+                                  <center>
+<img  src="../Grafica/inseriscipaziente.png"  usemap="#link1"><map name="link1" id="link1">
+<area shape="rect" coords="180, 100, 80, 200" href="nuovoPaziente.jsp"  alt="click">
+</map> <img  src="../Grafica/inseriscimedico.png"  usemap="#link2"><map name="link2" id="link2">
+<area shape="rect" coords="180, 100, 80, 200" href="nuovoMedico.jsp"  alt="click">
+</map> <br>
+<img  src="../Grafica/inserisciesame.png"  usemap="#link3"><map name="link3" id="link3">
+<area shape="rect" coords="180, 100, 80, 200" href="nuovoEsame.jsp"  alt="click">
+</map> <img  src="../Grafica/inseriscitipologia.png"  usemap="#link4"><map name="link4" id="link4">
+<area shape="rect" coords="180, 100, 80, 200" href="nuovaTipologiaEsame.jsp"  alt="click">
+</map> 
                                <br><a href="index.html">Torna alla homepage</a></center>
                                 
 				

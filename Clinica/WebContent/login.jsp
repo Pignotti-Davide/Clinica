@@ -1,4 +1,12 @@
-
+<%@ page import="clinica.model.Utente" %>
+<% Utente utente = (Utente)session.getAttribute("utente");
+   boolean autorizzato = true;
+   if (utente!=null)
+	   out.clear();
+   RequestDispatcher rd = application.getRequestDispatcher("/error.jsp");
+	   rd.forward(request, response);
+	  
+%>
 <!doctype html>
 <html>
 <head>

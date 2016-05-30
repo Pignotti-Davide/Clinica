@@ -87,21 +87,29 @@ function AggiungiRequisito(requisiti){
 				<td><input type="text" name="descrizione"></input></td>
 			</tr>
 			<tr>
+			
 				<td>Numero di requisiti :</td>
 				<td><input type="text" name="num_requisiti" value="0"
-					maxlength="2" onkeyup="AggiungiRequisito(this)" /></td>
-				<td>Numero Risultati:</td>
-				<td><input type="text" name="num_risultati" value="0"
-					maxlength="2" onkeyup="AggiungiRisultato(this)"></input></td>
+					maxlength="2" onkeyup="AggiungiRequisito(this)" /></td><br>
+						</tr>
+			<tr>
+
 			</tr>
 		</table>
 		<table>
 			<tr>
 				<td><span id='box_requisiti'> <!-- Box che conterrà le righe aggiunte. Inizialmente vuoto! -->
 				</span></td>
-				<td><span id='box_risultati'> <!-- Box che conterrà le righe aggiunte. Inizialmente vuoto! -->
-				</span></td>
+				
 			</tr>
+			<br><tr>
+			</table>
+			<table>
+			<td>Numero Risultati:</td><br>
+				<td><input type="text" name="num_risultati" value="0"
+					maxlength="2" onkeyup="AggiungiRisultato(this)"></input></td>
+					<td><span id='box_risultati'> <!-- Box che conterrà le righe aggiunte. Inizialmente vuoto! -->
+				</span></td>
 		</table>
 		<input type="submit" value="invia" />
 	</form>
